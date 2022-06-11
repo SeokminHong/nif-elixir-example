@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <erl_nif.h>
 #include "lib/calc.h"
 
