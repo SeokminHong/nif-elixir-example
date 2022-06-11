@@ -10,5 +10,11 @@ defmodule Calc do
   @spec panic() :: no_return()
   def panic(), do: error()
 
-  defp error(), do: :erlang.error(:nif_not_loaded)
+  @spec send_message(pid(), binary()) :: no_return()
+  def send_message(_pid, _msg), do: error()
+
+  @spec start_some_task(pid(), float()) :: no_return()
+  def start_some_task(_pid, _delay), do: error()
+
+  defp error(), do: :erlang.nif_error(:nif_not_loaded)
 end
